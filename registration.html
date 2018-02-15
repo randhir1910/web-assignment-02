@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="validate.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="validate.js"></script>
+</head>
+<body>
+<div class="container">
+    <form action="#" class="form-horizontal" name="registration" onSubmit="return(validate())">
+
+      <h3   style="text-align: center">Registration Form</h3>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="fname">First Name:</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" id="fname" placeholder="enter first name" name="fname">
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="lname">Last Name:</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" id="lname" placeholder="enter last name" name="lname">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="email">Email Id:</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" id="email" placeholder="enter email address " name="email">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="reemail"> Confirm Email Id:</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" id="reemail" placeholder="re-enter email address " name="reemail">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2"> Gender</label>
+            <div class="col-sm-6">
+                <label class="radio-inline">
+                    <input type="radio" name="sex">Male
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="sex">Female
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="phone"> Phone </label>
+            <div class="col-sm-6">
+                <input type="text" maxlength="10" class="form-control" id="phone" placeholder="enter phone number  " name="phone">
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">Submit</button>
+            </div>
+        </div>
+
+
+    </form>
+</div>
+</body>
+</html>
