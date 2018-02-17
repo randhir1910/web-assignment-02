@@ -39,27 +39,43 @@ function validate() {
 
 function getInfo() {
     $.ajax({
-        type: 'GET',
         url: 'https://reqres.in/api/users/10',
-        async: false,
         dataType: 'json',
+        async: false,
         success: function (data) {
-            var stringData = JSON.stringify(data);
-            var myData = JSON.parse(stringData);
-            document.getElementById("#myid").innerHTML = myData.data.id;
-            document.getElementById("#fname").innerHTML = myData.data.first_name;
-            document.getElementById("#lname").innerHTML = myData.data.last_name;
-            document.getElementById("#avatar").innerHTML = myData.data.avatar;
+            var row = $('<tr><td>' + data.data.id + '</td><td>' + data.data.first_name + '</td><td>' + data.data.last_name + '</td><td>' + data.data.avatar + '</td></tr>');
+            $('#myTable').append(row);
         },
-        failure: function (data) {
-
-            console.error(data)
+        error: function (data) {
+            console.log(data);
         }
-    })
-    ;
+    });
 }
 
-getInfo()
+getInfo();
+
+// function getInfo() {
+//     $.ajax({
+//         type: 'GET',
+//         url: 'https://reqres.in/api/users/10',
+//         async: false,
+//         dataType: 'json',
+//         success: function (data) {
+//             var stringData = JSON.stringify(data);
+//             var myData = JSON.parse(stringData);
+//             document.getElementById("myid").innerHTML = myData.data.id;
+//             document.getElementById("fname").innerHTML = myData.data.first_name;
+//             document.getElementById("lname").innerHTML = myData.data.last_name;
+//             document.getElementById("avatar").innerHTML = myData.data.avatar;
+//         },
+//         failure: function (data) {
+//
+//             console.error(data)
+//         }
+//     })
+//     ;
+// }
+
 
 
 

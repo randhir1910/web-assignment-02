@@ -1,12 +1,16 @@
 table {
-    border-collapse: collapse;
-    margin-left: 20%;
-    font-weight: bold;
+    width: 50%;
 }
 
-table, th, td {
-    border: 1px solid black;
+th {
+
+    background: cadetblue;
+    font-weight: bold;
+    padding: 6px;
+    color: black;
 }
-body {
-    background-color: cadetblue;
+
+td {
+    background: beige;
+    padding: 6px;
 }
