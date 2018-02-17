@@ -35,3 +35,31 @@ function validate() {
 
     return (true);
 }
+
+
+function getInfo() {
+    $.ajax({
+        type: 'GET',
+        url: 'https://reqres.in/api/users/10',
+        async: false,
+        dataType: 'json',
+        success: function (data) {
+            var stringData = JSON.stringify(data);
+            var myData = JSON.parse(stringData);
+            document.getElementById("#myid").innerHTML = myData.data.id;
+            document.getElementById("#fname").innerHTML = myData.data.first_name;
+            document.getElementById("#lname").innerHTML = myData.data.last_name;
+            document.getElementById("#avatar").innerHTML = myData.data.avatar;
+        },
+        failure: function (data) {
+
+            console.error(data)
+        }
+    })
+    ;
+}
+
+getInfo()
+
+
+
