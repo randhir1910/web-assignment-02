@@ -1,36 +1,55 @@
 function validate() {
     if (document.registration.fname.value == "") {
-        alert("Please provide your First Name!");
+        document.getElementById("name1").innerHTML = "Please provide your First Name!";
+        document.getElementById("name1").style.color = "red";
         document.registration.fname.focus();
         return false;
+    }
+    else {
+        document.getElementById("name1").innerHTML = "";
     }
 
     var email = document.registration.email.value;
     var atpos = email.indexOf("@");
     var dotpos = email.lastIndexOf(".");
     if (email == "" || atpos < 1 || (dotpos - atpos < 2)) {
-        alert("Please enter correct email ID")
+        document.getElementById("email1").innerHTML = "Please enter valid email ID";
+        document.getElementById("email1").style.color = "red";
         document.registration.email.focus();
         return false;
     }
+    else {
+        document.getElementById("email1").innerHTML = "";
+    }
 
-    if (document.registration.email.value != document.registration.reemail.value) {
-        alert("email id should be same")
+    if (document.registration.reemail.value != document.registration.email.value) {
+        document.getElementById("reemail1").innerHTML = "email id should be same ";
+        document.getElementById("reemail1").style.color = "red";
         document.registration.reemail.focus();
         return false;
     }
-
-    if ((registration.sex[0].checked == false) && (registration.sex[1].checked == false)) {
-        alert("Please select Male or Female");
-        return false;
+    else {
+        document.getElementById("reemail1").innerHTML = "";
     }
 
-    if (document.registration.phone.value == "" ||
-        isNaN(document.registration.phone.value) ||
-        document.registration.phone.value.length != 10) {
-        alert("Please provide valid  Mobile number");
+    if ((registration.sex[0].checked == false) && (registration.sex[1].checked == false)) {
+
+        document.getElementById("gender").innerHTML = "please select gender ";
+        document.getElementById("gender").style.color = "red";
+        return false;
+    }
+    else {
+        document.getElementById("gender").innerHTML = "";
+    }
+
+    if (isNaN(document.registration.phone.value) || document.registration.phone.value.length != 10) {
+        document.getElementById("phone1").innerHTML = "enter 10 digit mobile number ";
+        document.getElementById("phone1").style.color = "red";
         document.registration.phone.focus();
         return false;
+    }
+    else {
+        document.getElementById("phone1").innerHTML = "";
     }
 
     return (true);
