@@ -1,14 +1,32 @@
 function validate() {
+
+    if (nameValidate() &&
+        emailValidate() &&
+        reEmailValidate() &&
+        genderCheck() &&
+        mobileValidate()) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+function nameValidate() {
     if (document.registration.fname.value == "") {
-        document.getElementById("name1").innerHTML = "Please provide your First Name!";
-        document.getElementById("name1").style.color = "red";
+        document.getElementById("name1").innerHTML = "Please provide your First Name";
+        document.getElementById("name1").style.color = "red"
         document.registration.fname.focus();
         return false;
     }
     else {
         document.getElementById("name1").innerHTML = "";
+        return true;
     }
+}
 
+
+function emailValidate() {
     var email = document.registration.email.value;
     var atpos = email.indexOf("@");
     var dotpos = email.lastIndexOf(".");
@@ -20,8 +38,11 @@ function validate() {
     }
     else {
         document.getElementById("email1").innerHTML = "";
+        return true;
     }
+}
 
+function reEmailValidate() {
     if (document.registration.reemail.value != document.registration.email.value) {
         document.getElementById("reemail1").innerHTML = "email id should be same ";
         document.getElementById("reemail1").style.color = "red";
@@ -30,8 +51,11 @@ function validate() {
     }
     else {
         document.getElementById("reemail1").innerHTML = "";
+        return true;
     }
+}
 
+function genderCheck() {
     if ((registration.sex[0].checked == false) && (registration.sex[1].checked == false)) {
 
         document.getElementById("gender").innerHTML = "please select gender ";
@@ -40,19 +64,20 @@ function validate() {
     }
     else {
         document.getElementById("gender").innerHTML = "";
+        return true;
     }
+}
 
+function mobileValidate() {
     if (isNaN(document.registration.phone.value) || document.registration.phone.value.length != 10) {
         document.getElementById("phone1").innerHTML = "enter 10 digit mobile number ";
         document.getElementById("phone1").style.color = "red";
-        document.registration.phone.focus();
         return false;
     }
     else {
         document.getElementById("phone1").innerHTML = "";
+        return true;
     }
-
-    return (true);
 }
 
 
@@ -61,6 +86,7 @@ function getInfo() {
         url: 'https://reqres.in/api/users/10',
         dataType: 'json',
         async: false,
+        type: "GET",
         success: function (data) {
             var row = $('<tr><td>' + data.data.id + '</td><td>' + data.data.first_name + '</td><td>' + data.data.last_name + '</td><td>' + data.data.avatar + '</td></tr>');
             $('#myTable').append(row);

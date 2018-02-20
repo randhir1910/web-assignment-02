@@ -11,13 +11,15 @@
 </head>
 <body>
 <div class="container">
-    <form action="ajaxcall.html" class="form-horizontal" name="registration" onSubmit="return(validate())">
+    <form action="ajaxcall.html" method="post" class="form-horizontal" name="registration"
+          onSubmit="return(validate())">
 
         <h3 style="text-align: center">Registration Form</h3>
         <div class="form-group">
             <label class="control-label col-sm-2" for="fname">First Name:</label>
             <div class="col-sm-6">
-                <input type="text" class="form-control" id="fname" placeholder="enter first name" name="fname"  onblur="validate()">
+                <input type="text" class="form-control" id="fname" placeholder="enter first name" name="fname"
+                       onblur="nameValidate()">
             </div>
             <div id="name1"></div>
         </div>
@@ -33,7 +35,8 @@
         <div class="form-group">
             <label class="control-label col-sm-2" for="email">Email Id:</label>
             <div class="col-sm-6">
-                <input type="text" class="form-control" id="email" placeholder="enter email address " name="email" onblur="validate()">
+                <input type="text" class="form-control" id="email" placeholder="enter email address " name="email"
+                       onblur="emailValidate()">
             </div>
             <div id="email1"></div>
         </div>
@@ -42,7 +45,7 @@
             <label class="control-label col-sm-2" for="reemail"> Confirm Email Id:</label>
             <div class="col-sm-6">
                 <input type="text" class="form-control" id="reemail" placeholder="re-enter email address "
-                       name="reemail" onblur="validate()">
+                       name="reemail" onblur="reEmailValidate()">
             </div>
             <div id="reemail1"></div>
         </div>
@@ -51,10 +54,10 @@
             <label class="control-label col-sm-2"> Gender</label>
             <div class="col-sm-6">
                 <label class="radio-inline">
-                    <input type="radio" name="sex">Male
+                    <input type="radio" name="sex" onblur="genderCheck()">Male
                 </label>
                 <label class="radio-inline">
-                    <input type="radio" name="sex">Female
+                    <input type="radio" name="sex" onblur="genderCheck()">Female
                 </label>
             </div>
             <div id="gender"></div>
@@ -64,7 +67,7 @@
             <label class="control-label col-sm-2" for="phone"> Phone </label>
             <div class="col-sm-6">
                 <input type="text" maxlength="10" class="form-control" id="phone" placeholder="enter phone number  "
-                       name="phone" onblur="validate()">
+                       name="phone" onblur="mobileValidate()">
             </div>
             <div id="phone1"></div>
         </div>
